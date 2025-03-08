@@ -29,7 +29,7 @@
 <meta property="og:locale" content="en_US">
 <meta property="og:image" content="https://schwefelye.github.io/img/RL/ch2-05.png">
 <meta property="article:published_time" content="2025-03-03T19:36:00.000Z">
-<meta property="article:modified_time" content="2025-03-08T07:53:03.721Z">
+<meta property="article:modified_time" content="2025-03-08T08:30:34.451Z">
 <meta property="article:author" content="schwefel">
 <meta property="article:tag" content="Reinforcement Learning">
 <meta property="article:tag" content="Machine Learning">
@@ -225,7 +225,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2025-03-08 07:53:03" itemprop="dateModified" datetime="2025-03-08T07:53:03+00:00">2025-03-08</time>
+                <time title="Modified: 2025-03-08 08:30:34" itemprop="dateModified" datetime="2025-03-08T08:30:34+00:00">2025-03-08</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -250,7 +250,7 @@
                 <i class="far fa-file-word"></i>
               </span>
                 <span class="post-meta-item-text">Symbols count in article: </span>
-              <span>447</span>
+              <span>445</span>
             </span>
             <span class="post-meta-item" title="Reading time">
               <span class="post-meta-item-icon">
@@ -277,7 +277,6 @@
 <li><a target="_blank" rel="noopener" href="https://www.youtube.com/watch?v=vfCd-_Yt_Gk">Youtube: Bellman Equation-Action value <i class="fa fa-external-link-alt"></i></a></li>
 </ol>
 </blockquote>
-<h1 id="action-value"><a class="markdownIt-Anchor" href="#action-value"></a> Action value</h1>
 <p>From State Value to Action Value</p>
 <ul>
 <li><strong>State value</strong>: The average return the agent can <em>get starting from a state</em>.</li>
@@ -287,7 +286,7 @@
 <p>Why Do We Care About Action Value?</p>
 <p>Because we want to know which action is better.</p>
 </blockquote>
-<h2 id="definition-of-action-value"><a class="markdownIt-Anchor" href="#definition-of-action-value"></a> Definition of action value</h2>
+<h1 id="definition-of-action-value"><a class="markdownIt-Anchor" href="#definition-of-action-value"></a> Definition of action value</h1>
 <p>The definition of action value is as follows：</p>
 <p class='katex-block'><span class="katex-display"><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><semantics><mrow><msub><mi>q</mi><mi>π</mi></msub><mo stretchy="false">(</mo><mi>s</mi><mo separator="true">,</mo><mi>a</mi><mo stretchy="false">)</mo><mo>=</mo><mi mathvariant="double-struck">E</mi><mo stretchy="false">[</mo><msub><mi>G</mi><mi>t</mi></msub><mi mathvariant="normal">∣</mi><msub><mi>S</mi><mi>t</mi></msub><mo>=</mo><mi>s</mi><mo separator="true">,</mo><msub><mi>A</mi><mi>t</mi></msub><mo>=</mo><mi>a</mi><mo stretchy="false">]</mo></mrow><annotation encoding="application/x-tex">q_{\pi}(s, a) = \mathbb{E}[G_t|S_t = s, A_t = a]
 </annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.03588em;">q</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.151392em;"><span style="top:-2.5500000000000003em;margin-left:-0.03588em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathnormal mtight" style="margin-right:0.03588em;">π</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mopen">(</span><span class="mord mathnormal">s</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord mathnormal">a</span><span class="mclose">)</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord"><span class="mord mathbb">E</span></span><span class="mopen">[</span><span class="mord"><span class="mord mathnormal">G</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.2805559999999999em;"><span style="top:-2.5500000000000003em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight">t</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mord">∣</span><span class="mord"><span class="mord mathnormal" style="margin-right:0.05764em;">S</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.2805559999999999em;"><span style="top:-2.5500000000000003em;margin-left:-0.05764em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight">t</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.8777699999999999em;vertical-align:-0.19444em;"></span><span class="mord mathnormal">s</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord"><span class="mord mathnormal">A</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.2805559999999999em;"><span style="top:-2.5500000000000003em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight">t</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathnormal">a</span><span class="mclose">]</span></span></span></span></span></p>
@@ -295,7 +294,7 @@
 <li><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>q</mi><mi>π</mi></msub><mo stretchy="false">(</mo><mi>s</mi><mo separator="true">,</mo><mi>a</mi><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">q_{\pi}(s, a)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.03588em;">q</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.151392em;"><span style="top:-2.5500000000000003em;margin-left:-0.03588em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathnormal mtight" style="margin-right:0.03588em;">π</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mopen">(</span><span class="mord mathnormal">s</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord mathnormal">a</span><span class="mclose">)</span></span></span></span> is a function of the state-action pair <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false">(</mo><mi>s</mi><mo separator="true">,</mo><mi>a</mi><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">(s, a)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mopen">(</span><span class="mord mathnormal">s</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord mathnormal">a</span><span class="mclose">)</span></span></span></span></li>
 <li><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>q</mi><mi>π</mi></msub><mo stretchy="false">(</mo><mi>s</mi><mo separator="true">,</mo><mi>a</mi><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">q_{\pi}(s, a)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.03588em;">q</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.151392em;"><span style="top:-2.5500000000000003em;margin-left:-0.03588em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathnormal mtight" style="margin-right:0.03588em;">π</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mopen">(</span><span class="mord mathnormal">s</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord mathnormal">a</span><span class="mclose">)</span></span></span></span> depends on <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>π</mi></mrow><annotation encoding="application/x-tex">\pi</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.43056em;vertical-align:0em;"></span><span class="mord mathnormal" style="margin-right:0.03588em;">π</span></span></span></span></li>
 </ul>
-<h2 id="relationship-between-action-value-and-state-value"><a class="markdownIt-Anchor" href="#relationship-between-action-value-and-state-value"></a> Relationship between action value and state value</h2>
+<h1 id="relationship-between-action-value-and-state-value"><a class="markdownIt-Anchor" href="#relationship-between-action-value-and-state-value"></a> Relationship between action value and state value</h1>
 <p>It follows from the properties of conditional expectation that</p>
 <p class='katex-block'><span class="katex-display"><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><semantics><mtable rowspacing="0.24999999999999992em" columnalign="right" columnspacing=""><mtr><mtd><mstyle scriptlevel="0" displaystyle="true"><mrow><munder><munder><mrow><mi mathvariant="double-struck">E</mi><mrow><mo fence="true">[</mo><msub><mi>G</mi><mi>t</mi></msub><mo>∣</mo><msub><mi>S</mi><mi>t</mi></msub><mo>=</mo><mi>s</mi><mo fence="true">]</mo></mrow></mrow><mo stretchy="true">⏟</mo></munder><mrow><msub><mi>v</mi><mi>π</mi></msub><mo stretchy="false">(</mo><mi>s</mi><mo stretchy="false">)</mo></mrow></munder><mo>=</mo><munder><mo>∑</mo><mrow><mi>a</mi><mo>∈</mo><msub><mi mathvariant="script">A</mi><mi>t</mi></msub></mrow></munder><munder><munder><mrow><mi mathvariant="double-struck">E</mi><mrow><mo fence="true">[</mo><msub><mi>G</mi><mi>t</mi></msub><mo>∣</mo><msub><mi>S</mi><mi>t</mi></msub><mo>=</mo><mi>s</mi><mo separator="true">,</mo><msub><mi>A</mi><mi>t</mi></msub><mo>=</mo><mi>a</mi><mo fence="true">]</mo></mrow><mi>π</mi><mo stretchy="false">(</mo><mi>a</mi><mo>∣</mo><mi>s</mi><mo stretchy="false">)</mo></mrow><mo stretchy="true">⏟</mo></munder><mrow><msub><mi>q</mi><mi>π</mi></msub><mo stretchy="false">(</mo><mi>s</mi><mo separator="true">,</mo><mi>a</mi><mo stretchy="false">)</mo></mrow></munder></mrow></mstyle></mtd></mtr></mtable><annotation encoding="application/x-tex">\begin{aligned}
 \underbrace{\mathbb{E}\left[G_t\mid S_t=s\right]}_{v_\pi(s)} = \sum_{a\in\mathcal{A}_t} \underbrace{\mathbb{E}\left[G_t\mid S_t=s,A_t=a\right]\pi(a\mid s)}_{q_{\pi}(s,a)}
@@ -345,7 +344,7 @@ c100.7 8.3 195.3 44 280 108 55.3 42 101.7 93 139 153l9 14c2.7-4 5.7-8.7 9-14
 <li>（2）shows how to obtain <em>action values</em> from <em>state values</em></li>
 </ul>
 </blockquote>
-<h2 id="examples-for-action-value"><a class="markdownIt-Anchor" href="#examples-for-action-value"></a> Examples for action value</h2>
+<h1 id="examples-for-action-value"><a class="markdownIt-Anchor" href="#examples-for-action-value"></a> Examples for action value</h1>
 <p><img src="/img/RL/ch2-05.png" alt="" /></p>
 <p>Consider the stochastic policy shown in the figure.</p>
 <p class='katex-block'><span class="katex-display"><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><semantics><mrow><msub><mi>q</mi><mi>π</mi></msub><mo stretchy="false">(</mo><msub><mi>s</mi><mn>1</mn></msub><mo separator="true">,</mo><msub><mi>a</mi><mn>2</mn></msub><mo stretchy="false">)</mo><mo>=</mo><mo>−</mo><mn>1</mn><mo>+</mo><mi>γ</mi><msub><mi>v</mi><mi>π</mi></msub><mo stretchy="false">(</mo><msub><mi>s</mi><mn>2</mn></msub><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">q_{\pi}(s_1, a_2) = -1 + \gamma v_{\pi}(s_2)
@@ -411,7 +410,10 @@ q_{\pi}(s_1, a_5) &amp;= 0 + \gamma v_{\pi}(s_1).
     <a href="/post/f3870ab8.html" rel="prev" title="Matrix-vector form of the Bellman equation">
       <i class="fa fa-chevron-left"></i> Matrix-vector form of the Bellman equation
     </a></div>
-      <div class="post-nav-item"></div>
+      <div class="post-nav-item">
+    <a href="/post/9021aba0.html" rel="next" title="Bellman Optimality Equation(BOE)">
+      Bellman Optimality Equation(BOE) <i class="fa fa-chevron-right"></i>
+    </a></div>
     </div>
       </footer>
     
@@ -470,7 +472,7 @@ q_{\pi}(s_1, a_5) &amp;= 0 + \gamma v_{\pi}(s_1).
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#action-value"><span class="nav-text"> Action value</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#definition-of-action-value"><span class="nav-text"> Definition of action value</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#relationship-between-action-value-and-state-value"><span class="nav-text"> Relationship between action value and state value</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#examples-for-action-value"><span class="nav-text"> Examples for action value</span></a></li></ol></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#definition-of-action-value"><span class="nav-text"> Definition of action value</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#relationship-between-action-value-and-state-value"><span class="nav-text"> Relationship between action value and state value</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#examples-for-action-value"><span class="nav-text"> Examples for action value</span></a></li></ol></div>
       </div>
       <!--/noindex-->
 
@@ -486,7 +488,7 @@ q_{\pi}(s_1, a_5) &amp;= 0 + \gamma v_{\pi}(s_1).
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">4</span>
+          <span class="site-state-item-count">5</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
@@ -550,12 +552,12 @@ q_{\pi}(s_1, a_5) &amp;= 0 + \gamma v_{\pi}(s_1).
     <span class="post-meta-item-icon">
       <i class="fa fa-chart-area"></i>
     </span>
-    <span title="Symbols count total">5k</span>
+    <span title="Symbols count total">6k</span>
     <span class="post-meta-divider">|</span>
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
-    <span title="Reading time total">27 mins.</span>
+    <span title="Reading time total">28 mins.</span>
 </div>
   <div class="powered-by">Powered by <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://mist.theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Mist</a>
   </div>
