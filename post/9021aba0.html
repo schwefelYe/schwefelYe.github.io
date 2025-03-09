@@ -20,15 +20,15 @@
     var CONFIG = {"hostname":"schwefelye.github.io","root":"/","scheme":"Mist","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":true},"copycode":{"enable":true,"show_result":true,"style":"mac"},"back2top":{"enable":true,"sidebar":true,"scrollpercent":true},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":true,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.json"};
   </script>
 
-  <meta name="description" content="Definition of optimal state values and the Bellman optimality equation. Derivation and solution of the Bellman optimality equation. Analyzing optimal policies.">
+  <meta name="description" content="Definition of optimal state values and the Bellman optimality equation. Derivation and solution of the Bellman optimality equation. Analyzing optimalpolicies.">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Bellman Optimality Equation(BOE)">
 <meta property="og:url" content="https://schwefelye.github.io/post/9021aba0.html">
 <meta property="og:site_name" content="Noneasp, Schwefel">
-<meta property="og:description" content="Definition of optimal state values and the Bellman optimality equation. Derivation and solution of the Bellman optimality equation. Analyzing optimal policies.">
+<meta property="og:description" content="Definition of optimal state values and the Bellman optimality equation. Derivation and solution of the Bellman optimality equation. Analyzing optimalpolicies.">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2025-03-04T23:48:09.000Z">
-<meta property="article:modified_time" content="2025-03-09T06:22:44.185Z">
+<meta property="article:modified_time" content="2025-03-09T07:58:39.722Z">
 <meta property="article:author" content="schwefel">
 <meta property="article:tag" content="Reinforcement Learning">
 <meta property="article:tag" content="Machine Learning">
@@ -223,7 +223,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2025-03-09 06:22:44" itemprop="dateModified" datetime="2025-03-09T06:22:44+00:00">2025-03-09</time>
+                <time title="Modified: 2025-03-09 07:58:39" itemprop="dateModified" datetime="2025-03-09T07:58:39+00:00">2025-03-09</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -257,7 +257,7 @@
                 <span class="post-meta-item-text">Reading time &asymp;</span>
               <span>6 mins.</span>
             </span>
-            <div class="post-description">Definition of optimal state values and the Bellman optimality equation. Derivation and solution of the Bellman optimality equation. Analyzing optimal policies.</div>
+            <div class="post-description">Definition of optimal state values and the Bellman optimality equation. Derivation and solution of the Bellman optimality equation. Analyzing optimalpolicies.</div>
 
         </div>
       </header>
@@ -334,7 +334,7 @@ v(s) &amp;= \max_{\pi(s) \in \Pi(s)} \left( \mathbb{E} \left[ R_{t+1} \mid S_t =
 </blockquote>
 <h2 id="maximize-on-the-right-hand-side-of-boe"><a class="markdownIt-Anchor" href="#maximize-on-the-right-hand-side-of-boe"></a> Maximize on the right-hand side of BOE</h2>
 <p>Here we talk about how to solve BOE. In practice, we need to deal with the matrix-vector form since that is what we’re faced with. But since each row in the matrix is actually a vector of the elementwise form, we start with the element form.</p>
-<h3 id="examples-1"><a class="markdownIt-Anchor" href="#examples-1"></a> Examples 1</h3>
+<h3 id="example-1"><a class="markdownIt-Anchor" href="#example-1"></a> Example 1</h3>
 <p>In fact, we can turn the problem into “solve the optimal <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>π</mi></mrow><annotation encoding="application/x-tex">\pi</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.43056em;vertical-align:0em;"></span><span class="mord mathnormal" style="margin-right:0.03588em;">π</span></span></span></span> on the right-hand side”. Let’s look at one example first:</p>
 <hr />
 <blockquote>
@@ -348,7 +348,7 @@ v(s) &amp;= \max_{\pi(s) \in \Pi(s)} \left( \mathbb{E} \left[ R_{t+1} \mid S_t =
 <p class='katex-block'><span class="katex-display"><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><semantics><mrow><mi>v</mi><mo stretchy="false">(</mo><mi>s</mi><mo stretchy="false">)</mo><mo>=</mo><munder><mo><mi>max</mi><mo>⁡</mo></mo><mrow><mi>π</mi><mo stretchy="false">(</mo><mi>s</mi><mo stretchy="false">)</mo><mo>∈</mo><mi mathvariant="normal">Π</mi><mo stretchy="false">(</mo><mi>s</mi><mo stretchy="false">)</mo></mrow></munder><munder><mo>∑</mo><mrow><mi>a</mi><mo>∈</mo><mi mathvariant="script">A</mi></mrow></munder><mi>π</mi><mo stretchy="false">(</mo><mi>a</mi><mi mathvariant="normal">∣</mi><mi>s</mi><mo stretchy="false">)</mo><mi>q</mi><mo stretchy="false">(</mo><mi>s</mi><mo separator="true">,</mo><mi>a</mi><mo stretchy="false">)</mo><mo separator="true">,</mo><mspace width="1em"/><mi>s</mi><mo>∈</mo><mi mathvariant="script">S</mi><mi mathvariant="normal">.</mi></mrow><annotation encoding="application/x-tex">v(s) = \max_{\pi(s) \in \Pi(s)} \sum_{a \in \mathcal{A}} \pi(a | s) q(s,a), \quad s \in \mathcal{S}.
 </annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathnormal" style="margin-right:0.03588em;">v</span><span class="mopen">(</span><span class="mord mathnormal">s</span><span class="mclose">)</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:2.3717110000000003em;vertical-align:-1.321706em;"></span><span class="mop op-limits"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.43055999999999994em;"><span style="top:-2.3089999999999997em;margin-left:0em;"><span class="pstrut" style="height:3em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathnormal mtight" style="margin-right:0.03588em;">π</span><span class="mopen mtight">(</span><span class="mord mathnormal mtight">s</span><span class="mclose mtight">)</span><span class="mrel mtight">∈</span><span class="mord mtight">Π</span><span class="mopen mtight">(</span><span class="mord mathnormal mtight">s</span><span class="mclose mtight">)</span></span></span></span><span style="top:-3em;"><span class="pstrut" style="height:3em;"></span><span><span class="mop">max</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.966em;"><span></span></span></span></span></span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mop op-limits"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:1.050005em;"><span style="top:-1.8556639999999998em;margin-left:0em;"><span class="pstrut" style="height:3.05em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathnormal mtight">a</span><span class="mrel mtight">∈</span><span class="mord mtight"><span class="mord mathcal mtight">A</span></span></span></span></span><span style="top:-3.0500049999999996em;"><span class="pstrut" style="height:3.05em;"></span><span><span class="mop op-symbol large-op">∑</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:1.321706em;"><span></span></span></span></span></span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord mathnormal" style="margin-right:0.03588em;">π</span><span class="mopen">(</span><span class="mord mathnormal">a</span><span class="mord">∣</span><span class="mord mathnormal">s</span><span class="mclose">)</span><span class="mord mathnormal" style="margin-right:0.03588em;">q</span><span class="mopen">(</span><span class="mord mathnormal">s</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord mathnormal">a</span><span class="mclose">)</span><span class="mpunct">,</span><span class="mspace" style="margin-right:1em;"></span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord mathnormal">s</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">∈</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.68333em;vertical-align:0em;"></span><span class="mord"><span class="mord mathcal" style="margin-right:0.075em;">S</span></span><span class="mord">.</span></span></span></span></span></p>
 <p>Inspired by Example 1, we can first solve the optimal <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>π</mi></mrow><annotation encoding="application/x-tex">\pi</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.43056em;vertical-align:0em;"></span><span class="mord mathnormal" style="margin-right:0.03588em;">π</span></span></span></span> on the right-hand side. How to do that? The following example demonstrates its basic idea.</p>
-<h3 id="examples-2"><a class="markdownIt-Anchor" href="#examples-2"></a> Examples 2</h3>
+<h3 id="example-2"><a class="markdownIt-Anchor" href="#example-2"></a> Example 2</h3>
 <hr />
 <blockquote>
 <p><strong>Example 2.</strong></p>
@@ -441,8 +441,8 @@ v(s) &amp;= \max_{\pi} \sum_a \pi(a | s) q(s, a) \\
         
     <div class="post-nav">
       <div class="post-nav-item">
-    <a href="/post/18fcf064.html" rel="prev" title="Action value">
-      <i class="fa fa-chevron-left"></i> Action value
+    <a href="/post/4fc70471.html" rel="prev" title="Contraction mapping theorem">
+      <i class="fa fa-chevron-left"></i> Contraction mapping theorem
     </a></div>
       <div class="post-nav-item"></div>
     </div>
@@ -503,7 +503,7 @@ v(s) &amp;= \max_{\pi} \sum_a \pi(a | s) q(s, a) \\
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#optimal-policy"><span class="nav-text"> Optimal policy</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#bellman-optimality-equationboe"><span class="nav-text"> Bellman Optimality Equation（BOE）</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#elementwise-form"><span class="nav-text"> Elementwise form</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#maximize-on-the-right-hand-side-of-boe"><span class="nav-text"> Maximize on the right-hand side of BOE</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#examples-1"><span class="nav-text"> Examples 1</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#examples-2"><span class="nav-text"> Examples 2</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#matrix-vector-form"><span class="nav-text"> Matrix-vector form</span></a></li></ol></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#optimal-policy"><span class="nav-text"> Optimal policy</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#bellman-optimality-equationboe"><span class="nav-text"> Bellman Optimality Equation（BOE）</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#elementwise-form"><span class="nav-text"> Elementwise form</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#maximize-on-the-right-hand-side-of-boe"><span class="nav-text"> Maximize on the right-hand side of BOE</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#example-1"><span class="nav-text"> Example 1</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#example-2"><span class="nav-text"> Example 2</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#matrix-vector-form"><span class="nav-text"> Matrix-vector form</span></a></li></ol></li></ol></div>
       </div>
       <!--/noindex-->
 
@@ -519,20 +519,20 @@ v(s) &amp;= \max_{\pi} \sum_a \pi(a | s) q(s, a) \\
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">5</span>
+          <span class="site-state-item-count">6</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
       <div class="site-state-item site-state-categories">
             <a href="/categories/">
           
-        <span class="site-state-item-count">1</span>
+        <span class="site-state-item-count">2</span>
         <span class="site-state-item-name">categories</span></a>
       </div>
       <div class="site-state-item site-state-tags">
             <a href="/tags/">
           
-        <span class="site-state-item-count">2</span>
+        <span class="site-state-item-count">4</span>
         <span class="site-state-item-name">tags</span></a>
       </div>
   </nav>
@@ -583,12 +583,12 @@ v(s) &amp;= \max_{\pi} \sum_a \pi(a | s) q(s, a) \\
     <span class="post-meta-item-icon">
       <i class="fa fa-chart-area"></i>
     </span>
-    <span title="Symbols count total">7k</span>
+    <span title="Symbols count total">8k</span>
     <span class="post-meta-divider">|</span>
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
-    <span title="Reading time total">33 mins.</span>
+    <span title="Reading time total">38 mins.</span>
 </div>
   <div class="powered-by">Powered by <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://mist.theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Mist</a>
   </div>
